@@ -1,0 +1,95 @@
+section{
+  background: url("../../public/images/bg-img.png");
+  min-height: 87.8vh;
+}
+
+.navbarSection{
+  background: #070724;
+  ul{
+    li{
+      padding: 0 1rem;
+      letter-spacing: .1rem;
+      cursor: pointer;
+    }
+  }
+}
+section{
+  .planetSection{
+    .planetImg{
+      img{
+        max-width: 290px;
+        max-height: 290px;
+      }
+    }
+    .planetText{
+      .btns{
+        .btn {
+          display: block;
+          width: 16rem;
+          margin-top: 1rem;
+          font-size: 1.1rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+          padding: 13px 20px 13px;
+          outline: 0;
+          border: 1px solid #393950;
+          cursor: pointer;
+          position: relative;
+          background-color: rgba(0, 0, 0, 0);
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          z-index: 1;
+          &:after{
+            content: "";
+            background-color: #D14C32;
+            width: 100%;
+            z-index: -1;
+            position: absolute;
+            height: 100%;
+            top: 7px;
+            left: 7px;
+            transition: 0.2s;
+          }
+          &:hover:after{
+            top: 0;
+            left: 0;
+            background: #419EBB;
+          }
+        }
+        .active{
+          background: #419EBB;
+        }
+      }
+      .wiki{
+        color: #838392;
+        font-size: 1.1rem;
+      }
+    }
+  }
+  .footer{
+    //padding: 1rem 3rem;
+    .cards{
+      .card{
+        display: inline-block;
+        width: 13rem;
+        border: 1px solid #393950;
+        padding: 1rem 2rem;
+        color: white;
+        p{
+          color: #837C75;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .navbarSection{
+    ul{
+      li{
+        padding: 0 .3rem;
+      }
+    }
+  }
+}
