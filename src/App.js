@@ -1,9 +1,10 @@
 import React from "react";
 import '../src/components/style.css'
 import {
-    BrowserRouter as Router,
-    Route,
-    Routes,
+  BrowserRouter,
+  Route,
+  Switch,
+  Redirect
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Mercury from "./components/Mercury";
@@ -15,24 +16,23 @@ import Saturn from "./components/Saturn";
 import Neptune from "./components/Neptune";
 import Uranus from "./components/Uranus";
 
+
 function App() {
   return (
-    <>
-    <Router>
+      <BrowserRouter>
         <Navbar />
-        <Routes>
-            <Route path="/" element={<Mercury />} />
-            <Route path="/mercury" element={<Mercury />} />
-            <Route path="/venus" element={<Venus />} />
-            <Route path="/earth" element={<Earth />} />
-            <Route path="/mars" element={<Mars />} />
-            <Route path="/jupiter" element={<Jupiter />} />
-            <Route path="/saturn" element={<Saturn />} />
-            <Route path="/uranus" element={<Uranus />} />
-            <Route path="/neptune" element={<Neptune />} />
-        </Routes>
-    </Router>
-    </>
+        <Switch>
+          <Route path="/mercury" component={Mercury} exact />
+          <Route path="/venus" component={Venus } exact />
+          <Route path="/earth" component={Earth } exact />
+          <Route path="/mars" component={Mars } exact />
+          <Route path="/jupiter" component={Jupiter } exact />
+          <Route path="/saturn" component={Saturn } exact />
+          <Route path="/uranus" component={Uranus } exact />
+          <Route path="/neptune" component={Neptune } exact />
+          <Redirect to="/mercury" />
+        </Switch>
+      </BrowserRouter>
   );
 }
 

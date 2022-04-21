@@ -1,28 +1,60 @@
-section{
+section {
   background: url("../../public/images/bg-img.png");
   min-height: 87.8vh;
 }
 
-.navbarSection{
+.navbarSection {
   background: #070724;
-  ul{
-    li{
-      padding: 0 1rem;
+
+  ul {
+    li {
       letter-spacing: .1rem;
       cursor: pointer;
+
+      .menu-link {
+        padding: 0 .7rem;
+        position: relative;
+
+        &:focus {
+          &::after {
+            content: "]";
+            position: absolute;
+            right: -5px;
+          }
+
+          &::before {
+            content: "[";
+            position: absolute;
+            left: -5px;
+          }
+        }
+      }
     }
   }
 }
-section{
-  .planetSection{
-    .planetImg{
-      img{
+
+section {
+  .planetSection {
+    .planetImg {
+      img {
         max-width: 290px;
         max-height: 290px;
       }
+
+      .image-2,
+      .image-3 {
+        display: none;
+      }
     }
-    .planetText{
-      .btns{
+
+    .planetText {
+
+      .info-2,
+      .info-3 {
+        display: none;
+      }
+
+      .btns {
         .btn {
           display: block;
           width: 16rem;
@@ -40,7 +72,8 @@ section{
           -webkit-user-select: none;
           touch-action: manipulation;
           z-index: 1;
-          &:after{
+
+          &:after {
             content: "";
             background-color: #D14C32;
             width: 100%;
@@ -51,32 +84,31 @@ section{
             left: 7px;
             transition: 0.2s;
           }
-          &:hover:after{
+        }
+
+        .active {
+          &:after {
+            background-color: #419EBB;
             top: 0;
             left: 0;
-            background: #419EBB;
           }
         }
-        .active{
-          background: #419EBB;
-        }
       }
-      .wiki{
+
+      .wiki {
         color: #838392;
         font-size: 1.1rem;
       }
     }
   }
-  .footer{
-    //padding: 1rem 3rem;
-    .cards{
-      .card{
-        display: inline-block;
-        width: 13rem;
+
+  .footer {
+    .cards {
+      .card {
         border: 1px solid #393950;
         padding: 1rem 2rem;
         color: white;
-        p{
+        p {
           color: #837C75;
         }
       }
@@ -84,11 +116,173 @@ section{
   }
 }
 
-@media (min-width: 768px) {
+.menu {
+  input {
+    display: none;
+  }
+}
+
+@media (max-width: 768.9px) {
+
+  .menu {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu span {
+    position: absolute;
+    width: 45px;
+    height: 4px;
+    background: #FFF;
+  }
+
+  .menu input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+
+  .menu span:nth-child(2) {
+    transform: translateY(-12px);
+  }
+
+  .menu span:nth-child(5) {
+    transform: translateY(12px);
+  }
+
+  .menu input:checked~span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu input:checked~span:nth-child(5) {
+    opacity: 0;
+  }
+
+  .menu span:nth-child(3) {
+    transform: rotate(0);
+    transition: all 0.4s;
+  }
+
+  .menu span:nth-child(4) {
+    transform: rotate(0);
+    transition: all 0.4s;
+  }
+
+  .menu input:checked~span:nth-child(3) {
+    transform: rotate(135deg);
+  }
+
+  .menu input:checked~span:nth-child(4) {
+    transform: rotate(-135deg);
+  }
+
+  .nav-item {
+    position: absolute;
+    width: 100%;
+    left: -100%;
+    height: 100vh;
+    margin-top: 80px;
+    padding: 30px 0px;
+    background-color: #070724;
+    z-index: 1111;
+    transition: all .5s;
+    li {
+      margin: 10px 40px;
+      a{
+        padding: .5rem 2rem !important;
+        display: block;
+        border: 1px solid #419EBB;
+        &:focus {
+          &::after {
+            display: none;
+          }
+
+          &::before {
+           display: none;
+          }
+        }
+      }
+    }
+  }
+  .open{
+    left: 0%;
+  }
+  .btns{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 4rem;
+    padding: 1rem 2rem;
+    .btn{
+      width: auto !important;
+      margin: 0;
+      padding: 10px !important;
+      border: none !important;
+      display: flex;
+      justify-content: space-between;
+      font-size: .8rem !important;
+      font-weight: 500 !important;
+      text-transform: uppercase;
+      &::after{
+        display: none;
+      }
+    }
+    .active{
+      border-bottom: 2px solid #419EBB !important;
+    }
+  }
+}
+
+@media (max-width: 639.9px) {
   .navbarSection{
-    ul{
-      li{
-        padding: 0 .3rem;
+    .navbar{
+      padding: 0 2rem;
+      ul{
+        li{
+          padding-top: 1.5rem;
+        }
+      }
+    }
+  }
+  .planetSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .planetImg{
+      margin-top: 4rem;
+    }
+    .planetText{
+      text-align: center;
+      padding: 0 2rem;
+      h1{
+        font-size: 2.5rem;
+      }
+      p{
+        font-size: 1.2rem;
+      }
+    }
+  
+  }
+  .footer{
+    .cards{
+      width: 100%;
+      padding: 0 2rem;
+      .card{
+        margin-bottom: 0.3rem;
+        .cardInfo{
+          display: flex;
+          justify-content: space-between;
+        }
       }
     }
   }

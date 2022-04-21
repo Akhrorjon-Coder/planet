@@ -1,1 +1,282 @@
-section{background:url("../../public/images/bg-img.png");min-height:87.8vh}.navbarSection{background:#070724}.navbarSection ul li{padding:0 1rem;letter-spacing:.1rem;cursor:pointer}section .planetSection .planetImg img{max-width:290px;max-height:290px}section .planetSection .planetText .btns .btn{display:block;width:16rem;margin-top:1rem;font-size:1.1rem;font-weight:700;letter-spacing:1px;padding:13px 20px 13px;outline:0;border:1px solid #393950;cursor:pointer;position:relative;background-color:rgba(0,0,0,0);user-select:none;-webkit-user-select:none;touch-action:manipulation;z-index:1}section .planetSection .planetText .btns .btn:after{content:"";background-color:#d14c32;width:100%;z-index:-1;position:absolute;height:100%;top:7px;left:7px;transition:.2s}section .planetSection .planetText .btns .btn:hover:after{top:0;left:0;background:#419ebb}section .planetSection .planetText .btns .active{background:#419ebb}section .planetSection .planetText .wiki{color:#838392;font-size:1.1rem}section .footer .cards .card{display:inline-block;width:13rem;border:1px solid #393950;padding:1rem 2rem;color:#fff}section .footer .cards .card p{color:#837c75}@media(min-width: 768px){.navbarSection ul li{padding:0 .3rem}}/*# sourceMappingURL=style.css.map */
+section {
+  background: url("../../public/images/bg-img.png");
+  min-height: 87.8vh;
+}
+
+.navbarSection {
+  background: #070724;
+}
+
+.navbarSection ul li {
+  letter-spacing: .1rem;
+  cursor: pointer;
+}
+
+.navbarSection ul li .menu-link {
+  padding: 0 .7rem;
+  position: relative;
+}
+
+.navbarSection ul li .menu-link:focus::after {
+  content: "]";
+  position: absolute;
+  right: -5px;
+}
+
+.navbarSection ul li .menu-link:focus::before {
+  content: "[";
+  position: absolute;
+  left: -5px;
+}
+
+section .planetSection .planetImg img {
+  max-width: 290px;
+  max-height: 290px;
+}
+
+section .planetSection .planetImg .image-2,
+section .planetSection .planetImg .image-3 {
+  display: none;
+}
+
+section .planetSection .planetText .info-2,
+section .planetSection .planetText .info-3 {
+  display: none;
+}
+
+section .planetSection .planetText .btns .btn {
+  display: block;
+  width: 16rem;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid #393950;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  z-index: 1;
+}
+
+section .planetSection .planetText .btns .btn:after {
+  content: "";
+  background-color: #D14C32;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+section .planetSection .planetText .btns .active:after {
+  background-color: #419EBB;
+  top: 0;
+  left: 0;
+}
+
+section .planetSection .planetText .wiki {
+  color: #838392;
+  font-size: 1.1rem;
+}
+
+section .footer .cards .card {
+  border: 1px solid #393950;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+section .footer .cards .card p {
+  color: #837C75;
+}
+
+.menu input {
+  display: none;
+}
+
+@media (max-width: 768.9px) {
+  .menu {
+    width: 70px;
+    height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .menu span {
+    position: absolute;
+    width: 45px;
+    height: 4px;
+    background: #FFF;
+  }
+  .menu input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu span:nth-child(2) {
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+  }
+  .menu span:nth-child(5) {
+    -webkit-transform: translateY(12px);
+            transform: translateY(12px);
+  }
+  .menu input:checked ~ span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu input:checked ~ span:nth-child(5) {
+    opacity: 0;
+  }
+  .menu span:nth-child(3) {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  .menu span:nth-child(4) {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  .menu input:checked ~ span:nth-child(3) {
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  .menu input:checked ~ span:nth-child(4) {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+  .nav-item {
+    position: absolute;
+    width: 100%;
+    left: -100%;
+    height: 100vh;
+    margin-top: 80px;
+    padding: 30px 0px;
+    background-color: #070724;
+    z-index: 1111;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+  .nav-item li {
+    margin: 10px 40px;
+  }
+  .nav-item li a {
+    padding: .5rem 2rem !important;
+    display: block;
+    border: 1px solid #419EBB;
+  }
+  .nav-item li a:focus::after {
+    display: none;
+  }
+  .nav-item li a:focus::before {
+    display: none;
+  }
+  .open {
+    left: 0%;
+  }
+  .btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 4rem;
+    padding: 1rem 2rem;
+  }
+  .btns .btn {
+    width: auto !important;
+    margin: 0;
+    padding: 10px !important;
+    border: none !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-size: .8rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+  }
+  .btns .btn::after {
+    display: none;
+  }
+  .btns .active {
+    border-bottom: 2px solid #419EBB !important;
+  }
+}
+
+@media (max-width: 639.9px) {
+  .navbarSection .navbar {
+    padding: 0 2rem;
+  }
+  .navbarSection .navbar ul li {
+    padding-top: 1.5rem;
+  }
+  .planetSection {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .planetSection .planetImg {
+    margin-top: 4rem;
+  }
+  .planetSection .planetText {
+    text-align: center;
+    padding: 0 2rem;
+  }
+  .planetSection .planetText h1 {
+    font-size: 2.5rem;
+  }
+  .planetSection .planetText p {
+    font-size: 1.2rem;
+  }
+  .footer .cards {
+    width: 100%;
+    padding: 0 2rem;
+  }
+  .footer .cards .card {
+    margin-bottom: 0.3rem;
+  }
+  .footer .cards .card .cardInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+/*# sourceMappingURL=style.css.map */
