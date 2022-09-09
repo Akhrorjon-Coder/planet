@@ -47,8 +47,6 @@ const data = [
 
 
 const Navbar = () => {
-
-
   return (
     <div className='navbarSection'>
       <div className='navbar lg:px-24 py-2 md:px-10 sm:px-10'>
